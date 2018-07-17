@@ -1,0 +1,23 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-navbar>
+      <ion-title>
+        {{headerTitle}}
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <!-- <button ion-item *ngFor="let nav of navigation">
+        {{nav.title}}
+      </button> -->
+      <button ion-item >
+          Home
+        </button>
+        <button ion-item >
+           Teams
+          </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>
