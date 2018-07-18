@@ -1,0 +1,24 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <ion-icon ios="ios-football" md="md-football" left></ion-icon>
+        Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let nav of navigation">
+        <ion-icon name="{{nav.icon}}"></ion-icon>
+        {{nav.title}}
+        <ion-list *ngIf="nav.subMenu">
+          <ion-item *ngFor="let subnav of nav.subMenu">
+            <ion-icon name="{{subnav.icon}}"></ion-icon>
+            {{subnav.title}}
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>

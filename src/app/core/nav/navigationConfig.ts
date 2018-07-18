@@ -2,15 +2,30 @@ export const Navigation = {
     home: [
         {
             title: 'Home',
+            icon:'home',
             page: 'Home'
         },
         {
             title: 'Teams',
-            page: 'Teams'
+            icon:'people',
+            page: 'Teams',
+            subMenu:[
+                {
+                    title: 'Matches',
+                    icon:'football',
+                    page: 'Teams',
+                },
+                {
+                    title: 'Players',
+                    icon:'shirt',
+                    page: 'Teams',
+                }
+            ]
         },
         {
-            title: 'Users',
-            page: 'Users'
+            title: 'User',
+            icon:'person',
+            page: 'User'
         }
     ]
 }
