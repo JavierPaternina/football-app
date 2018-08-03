@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {AngularFireModule} from 'angularfire2';
+import { StoreModule } from "@ngrx/store";
 import {AngularFireAuth} from 'angularfire2/auth';
 import { firebaseConfig } from "./core/firebase/firebaseconfig";
 import { StatusBar } from '@ionic-native/status-bar';
@@ -19,7 +20,8 @@ import { HomePage } from './pages/home/home';
     BrowserModule,
     SharedModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig.fire)
+    AngularFireModule.initializeApp(firebaseConfig.fire),
+    StoreModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
