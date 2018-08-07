@@ -5,9 +5,10 @@ import { HeaderComponent } from "./components/header.component/header.component"
 import { FooterComponent } from "./components/footer.component/footer.component";
 import { MenuComponent } from "./components/menu.component/menu.component";
 
+const SHARED_COMPONENTS = [HeaderComponent, FooterComponent, MenuComponent];
 @NgModule({
     imports: [CommonModule, IonicModule],
-    declarations: [HeaderComponent, FooterComponent, MenuComponent],
-    exports: [HeaderComponent, FooterComponent, MenuComponent]
+    declarations: SHARED_COMPONENTS,
+    exports: SHARED_COMPONENTS
 })
 export class SharedModule { }
