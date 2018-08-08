@@ -21,7 +21,7 @@ import { HomePage } from './pages/home/home';
     SharedModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig.fire),
-    StoreModule
+    StoreModule.forRoot({})
   ],
   bootstrap: [IonicApp],
   entryComponents: [

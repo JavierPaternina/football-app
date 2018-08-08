@@ -1,7 +1,9 @@
 
 
 export interface Players {
-    userId: string;
-    alias: string;
-    playerPosition: string;
+      id:string;
+      name:string;
+      emaill:string;
+      alias?: string;
+      playerPosition?: string;
 }

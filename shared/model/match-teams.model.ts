@@ -2,7 +2,7 @@ import { Players } from './players.model';
 
 export interface MatchTeams {
 
-    matchId: number;
+    matchId: string;
     players: Players[];
     teamName: string;
 
