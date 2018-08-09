@@ -6,13 +6,19 @@
             <ion-label floating>
                 Email
             </ion-label>
-            <ion-input type="email" name="email" formControlName="email"></ion-input>
+            <ion-input type="email" 
+                       name="email" 
+                       formControlName="email"
+                       (keypress)="checkEmail()"></ion-input>
         </ion-item>
         <ion-item [class.ftb-invalid-form]="passInvalid">
             <ion-label floating>
                 Password
             </ion-label>
-            <ion-input type="password" name="password" formControlName="password"></ion-input>
+            <ion-input type="password" 
+                       name="password" 
+                       formControlName="password"
+                       (keypress)="checkPass()"></ion-input>
         </ion-item>
 
     </form>

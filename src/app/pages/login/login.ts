@@ -22,9 +22,19 @@ export class LoginPage {
              password:['',Validators.compose([Validators.required,Validators.min(6)])]
         });
     }
-
+    checkEmail(){
+        if(this.loginForm.controls.email.value){
+            this.emailInvalid = false;
+        }
+       
+    }
+    checkPass(){
+        if(this.loginForm.controls.password.value){
+            this.passInvalid = false;
+        }
+    }
     login(){
-        
+
         if(this.loginForm.controls.email.invalid){
             
             this.emailInvalid = true;
