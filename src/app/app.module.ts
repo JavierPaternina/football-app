@@ -2,37 +2,37 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {AngularFireModule} from 'angularfire2';
-import { StoreModule } from "@ngrx/store";
-import {AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+// import { StoreModule } from "@ngrx/store";
+import { AngularFireAuth } from 'angularfire2/auth';
 import { firebaseConfig } from "./core/firebase/firebaseconfig";
 import { StatusBar } from '@ionic-native/status-bar';
-import { SharedModule } from "./shared/shared.module";
-import { MyApp } from './app.component';
-import { HomePage } from './pages/home/home';
+import { SharedModule } from './shared/shared.module';
+import { PAGES } from './pages/index'
+import { FootballTeamApp } from './app.component';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    FootballTeamApp,
+    PAGES 
+
   ],
   imports: [
     BrowserModule,
     SharedModule,
-    IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig.fire),
-    StoreModule.forRoot({})
+    IonicModule.forRoot(FootballTeamApp),
+    AngularFireModule.initializeApp(firebaseConfig.fire)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    FootballTeamApp,
+    PAGES 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFireAuth,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
