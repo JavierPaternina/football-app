@@ -1,22 +1,21 @@
-<ftb-header [headerTitle]="loginTitle">
-</ftb-header>
-<ion-content padding>
-    <form class="ftb-login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+<ftb-header [headerTitle]="pageTitle"></ftb-header>
+<ion-content padding >
+  <form class="ftb-login-form" [formGroup]="loginForm" (ngSubmit)="login()">
         <ion-item [class.ftb-invalid-form]="emailInvalid">
             <ion-label floating>
                 Email
             </ion-label>
-            <ion-input type="email" 
-                       name="email" 
+            <ion-input type="email"
+                       name="email"
                        formControlName="email"
                        (keypress)="checkEmail()"></ion-input>
         </ion-item>
-        <ion-item [class.ftb-invalid-form]="passInvalid">
-            <ion-label floating>
+        <ion-item  [class.ftb-invalid-form]="passInvalid" >
+            <ion-label floating >
                 Password
             </ion-label>
-            <ion-input type="password" 
-                       name="password" 
+            <ion-input type="password"
+                       name="password"
                        formControlName="password"
                        (keypress)="checkPass()"></ion-input>
         </ion-item>
@@ -25,8 +24,5 @@
     <button ion-button color="balanced" block class="ftb-login-buttom" (click)="login()">
         Log in
     </button>
-    <button block ion-button color="danger" class="ftb-login-buttom">
-        <ion-icon name="logo-google" class="ftb-icon-login-buttom"></ion-icon>
-        Log in with Google
-    </button>
+
 </ion-content>

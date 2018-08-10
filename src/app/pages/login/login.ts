@@ -7,12 +7,12 @@ import { NavController} from 'ionic-angular';
 })
 
 export class LoginPage {
-    loginTitle = 'Football-app';
+
     loginForm:FormGroup;
     passInvalid = false;
     emailInvalid=false;
-
-    constructor(public navCtrl: NavController,private fb:FormBuilder) { 
+    pageTitle="Login";
+    constructor(public navCtrl: NavController,private fb:FormBuilder) {
         this.initForm();
     }
 
@@ -26,17 +26,20 @@ export class LoginPage {
         if(this.loginForm.controls.email.value){
             this.emailInvalid = false;
         }
-       
+
     }
     checkPass(){
         if(this.loginForm.controls.password.value){
             this.passInvalid = false;
         }
     }
+    pop(){
+      this.navCtrl.pop();
+    }
     login(){
 
         if(this.loginForm.controls.email.invalid){
-            
+
             this.emailInvalid = true;
             console.log('Email is required');
         }
@@ -45,5 +48,5 @@ export class LoginPage {
             console.log('Pass is required');
         }
     }
-    
+
 }
