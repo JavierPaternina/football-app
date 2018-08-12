@@ -25,7 +25,7 @@
     "label-position": true,
     "max-line-length": [
       true,
-      140
+      160
     ],
     "member-access": false,
     "member-ordering": [
@@ -115,13 +115,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "ftb",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "ftb",
       "page",
       "kebab-case"
     ],
