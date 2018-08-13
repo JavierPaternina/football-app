@@ -1,0 +1,28 @@
+<ftb-header [headerTitle]="pageTitle" [backBtn]="true"></ftb-header>
+<ion-content padding >
+  <form  class="ftb-login-form" [formGroup]="loginForm" >
+        <ion-item [class.ftb-invalid-form]="emailInvalid">
+            <ion-label position="floating">
+                Email
+            </ion-label>
+            <ion-input type="email"
+                       name="email"
+                       formControlName="email"
+                       (keypress)="checkEmail()"></ion-input>
+        </ion-item>
+        <ion-item  [class.ftb-invalid-form]="passInvalid" >
+            <ion-label position="floating" >
+                Password
+            </ion-label>
+            <ion-input type="password"
+                       name="password"
+                       formControlName="password"
+                       (keypress)="checkPass()"></ion-input>
+        </ion-item>
+
+    </form>
+    <ion-button color="balanced" block class="ftb-login-buttom" (click)="login()">
+        Log in
+    </ion-button>
+
+</ion-content>

@@ -1,0 +1,12 @@
+.login-container{
+    background: #C7EBBF;
+  }
+  .ftb-splash-btn-inline{
+    width: 48%;
+    .button-native{
+      width: 100%;
+    }
+  }
+ :host ::ng-deep .button-native{
+    width: 100%;
+  }

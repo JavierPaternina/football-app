@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from 'ionic-angular';
-import { HeaderComponent } from "./components/header.component/header.component";
-import { FooterComponent } from "./components/footer.component/footer.component";
-import { MenuComponent } from "./components/menu.component/menu.component";
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { IonicModule } from '@ionic/angular';
 
-const SHARED_COMPONENTS = [HeaderComponent, FooterComponent, MenuComponent];
+const COMPONENTS = [FooterComponent, HeaderComponent, MenuComponent];
+
 @NgModule({
-    imports: [CommonModule, IonicModule],
-    declarations: SHARED_COMPONENTS,
-    exports: SHARED_COMPONENTS
+  imports: [CommonModule, IonicModule],
+  declarations: COMPONENTS,
+  exports: COMPONENTS
 })
-export class SharedModule { }
+export class SharedModule {}

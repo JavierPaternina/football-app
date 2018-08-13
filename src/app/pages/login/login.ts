@@ -42,11 +42,14 @@ export class LoginPage {
 
             this.emailInvalid = true;
             console.log('Email is required');
+            return;
         }
         if(this.loginForm.controls.password.invalid){
             this.passInvalid = true;
             console.log('Pass is required');
+            return;
         }
+        this.navCtrl.setRoot('/home');
     }
 
 }

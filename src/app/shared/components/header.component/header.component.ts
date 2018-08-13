@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
     @Input() headerTitle: string;
-    @Input() menu = false;
+    @Input() menuBtn = false;
+    @Input() backBtm = false;
 
     constructor() { }
 

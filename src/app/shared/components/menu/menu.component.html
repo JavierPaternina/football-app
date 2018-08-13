@@ -1,0 +1,22 @@
+<ion-menu side="start">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <ion-icon ios="ios-football" md="md-football"></ion-icon>
+        Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item slot="start" *ngFor="let nav of navigation">
+         {{nav.title}}
+        <ion-list *ngIf="nav.subMenu" slot="start">
+          <ion-item *ngFor="let subnav of nav.subMenu">
+             {{subnav.title}}
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet main></ion-router-outlet>
