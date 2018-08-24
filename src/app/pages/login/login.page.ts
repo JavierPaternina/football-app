@@ -1,18 +1,22 @@
 import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from '../../core/authentication/services/login.service';
 
 @Component({
   selector: 'ftb-login',
   templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss']
+  styleUrls: ['./login.page.scss'],
+  providers: [LoginService]
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
   passInvalid = false;
   emailInvalid = false;
   pageTitle = 'Login';
-  constructor(public navCtrl: NavController, private fb: FormBuilder) {
+  constructor(public navCtrl: NavController,
+    private fb: FormBuilder,
+    private singInService: LoginService) {
     this.initForm();
   }
 
@@ -39,6 +43,7 @@ export class LoginPage implements OnInit {
     this.navCtrl.goBack('');
   }
   login() {
+    const loginValues = this.loginForm.value;
     if (this.loginForm.controls.email.invalid) {
       this.emailInvalid = true;
       console.log('Email is required');
@@ -49,7 +54,13 @@ export class LoginPage implements OnInit {
       console.log('Pass is required');
       return;
     }
-    this.navCtrl.goRoot('/home');
+
+    this.singInService.loginApp(loginValues.email, loginValues.password).then(user => {
+      console.log(user);
+    },
+      error => {
+        console.log(error);
+      });
   }
-  ngOnInit() {}
+  ngOnInit() { }
 }

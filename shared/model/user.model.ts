@@ -1,9 +1,8 @@
 
 export interface User {
-  id:string;
-  name:string;
-  emaill:string;
-  alias?: string;
-  playerPosition?: string;
-
+  uid: string;
+  displayName: string;
+  emaill: string;
+  phoneNumber: string;
+  photoUrl: string;
 }

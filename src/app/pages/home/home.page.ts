@@ -1,4 +1,4 @@
-import { NAVIGATION } from './../../shared/constants/navigation.constant';
+import { NAVIGATION } from '../../shared/constants/navigation.constant';
 import { Component } from '@angular/core';
 
 @Component({
