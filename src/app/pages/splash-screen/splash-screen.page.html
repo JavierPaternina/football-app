@@ -10,7 +10,8 @@
         </ion-button>
         <ion-button block
                  color="secondary"
-                 class="ftb-splash-btn-inline">
+                 class="ftb-splash-btn-inline"
+                 (click)="goToSignUp()">
             <ion-icon ios="ios-person-add" md="md-person-add"></ion-icon>
           Sign Up
         </ion-button>
@@ -19,7 +20,7 @@
         <ion-button color="facebook" block>
           Log in with Facebook
         </ion-button>
-        <ion-button block ion-button color="google">
+        <ion-button block ion-button color="google" (click)="signInGoogle()">
   
           Log in with Google
       </ion-button>
